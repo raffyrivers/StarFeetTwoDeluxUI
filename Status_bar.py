@@ -24,7 +24,7 @@ class Status_bar(pygame.sprite.Sprite):
 
     def draw(self, surface:pygame.Surface, x_position:int, y_position:int, boarder_radius:int):
         pygame.draw.rect(self.surf, self.color, self.rect, 0, boarder_radius)
-        text_surf = status_font.render(self.label, True, 'black')
+        text_surf = status_font.render(self.label, True, pygame.Color('black'))
         text_rect = text_surf.get_rect(center=self.rect.center)
         self.surf.blit(text_surf, text_rect)
         surface.blit(self.surf, (x_position, y_position))
@@ -101,7 +101,7 @@ class Panel_bar(Status_bar): # These will act as button place holders
         
     def draw(self):
         pygame.draw.rect(self.surf, self.color, self.rect, 0, self.boarder_radius)
-        text_surf = self.font.render(self.label, True, self.text_color)
+        text_surf = self.font.render(self.label, True, pygame.Color(self.text_color))
         text_rect = text_surf.get_rect(center=self.rect.center)
         if self.text_position == 0:
             self.surf.blit(text_surf, text_rect)

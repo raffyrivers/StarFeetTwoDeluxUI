@@ -3,7 +3,6 @@ from Status_bar import *
 import pygame
 from pygame.locals import *
 
-# TODO: Start Deeply documenting this code to make it easier for others to read.
 
 '''
 *****************Documentation*****************
@@ -69,4 +68,5 @@ def main():
             display.blit(canvas, (0,0))
         clock.tick(FPS)
         pygame.display.flip()
+
 main()
